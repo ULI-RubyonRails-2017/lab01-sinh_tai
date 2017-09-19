@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <h1 class="websiteName">CoderRestaurant</h1>
+    <div class="navBar">
+      <div class="navItem" ><%= link_to 'Menu', 'menu', class: "navItemText"  %></div>
+      <div class="navItem" ><%= link_to 'Contact Us', 'contact_us', class: "navItemText" %></div>
+    </div>
     <%= yield %>
   </body>
 </html>

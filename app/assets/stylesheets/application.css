@@ -13,3 +13,59 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   background-color: #FFFFFF
+ }
+
+.websiteName {
+  color: red;
+  font-family: Verdana,sans-serif;
+  font-size: 48px;
+}
+
+.navBar {
+  background-color: #FF0000;
+  padding: 10px
+}
+
+.navItem {
+  display: inline;
+  margin: auto 30px;
+}
+
+.navItemText {
+  color: white;
+  font-family: Verdana,sans-serif;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.navItem > a:link {
+    text-decoration: none;
+}
+
+.navItem > a:visited {
+    text-decoration: none;
+}
+
+.navItem > a:hover {
+    text-decoration: underline;
+}
+
+.navItem > a:active {
+    text-decoration: underline;
+}
+
+table#contactUSTable {
+  border-spacing: 5px;
+}
+
+table#contactUSTable tr {
+  background-color: #eee;
+}
+
+table#contactUSTable tr td {
+  padding: 4px 40px 4px 20px;
+  text-align: left;
+}

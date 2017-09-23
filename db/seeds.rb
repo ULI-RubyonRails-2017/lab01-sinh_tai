@@ -10,9 +10,9 @@ MenuItem.delete_all
 
 # Breakfast
 MenuItem.create(name: 'Cơm Sườn', description: 'Cơm tấm ăn với một miếng sườn lớn.', price: 23000, section: 'breakfast', image_url: 'http://foodsvietnamese.com/wp-content/uploads/2016/10/com-suon-nuong.jpg')
-MenuItem.create(name: 'Bánh Ướt', description: 'Bánh ướt là món ăn Việt Name được ăn với nước mắm', price: 17000, section: 'breakfast', image_url: 'http://lambanh365.com/wp-content/uploads/2015/06/cach-lam-banh-uot-ngon-me-ly-1-e1434598404566.jpg')
-MenuItem.create(name: 'Bánh cuốn', description: 'Bánh ướt là món ăn Việt Name được ăn với nước mắm', price: 18000, section: 'breakfast', image_url: 'https://vietnamtravel.guide/wp-content/uploads/2016/03/cach-lam-banh-cuon.jpg')
-MenuItem.create(name: 'Bì cuốn', description: 'Bì cuốn là một món khai vị. Mỗi cuốn 5000 VND', price: 15000, section: 'breakfast', image_url: 'http://znews-photo-td.zadn.vn/w660/Uploaded/Ohunoaa/2016_08_05/Bi_cuon.jpg')
+MenuItem.create(name: 'Bánh Ướt', description: 'Bánh ướt là món ăn Việt Nam được ăn với nước mắm', price: 17000, section: 'breakfast', image_url: 'http://lambanh365.com/wp-content/uploads/2015/06/cach-lam-banh-uot-ngon-me-ly-1-e1434598404566.jpg')
+MenuItem.create(name: 'Bánh Cuốn', description: 'Bánh ướt là món ăn Việt Nam được ăn với nước mắm', price: 18000, section: 'breakfast', image_url: 'https://vietnamtravel.guide/wp-content/uploads/2016/03/cach-lam-banh-cuon.jpg')
+MenuItem.create(name: 'Bì Cuốn', description: 'Bì cuốn là một món khai vị. Mỗi cuốn 5000 VND. Mua một lần ba cuốn.', price: 15000, section: 'breakfast', image_url: 'http://znews-photo-td.zadn.vn/w660/Uploaded/Ohunoaa/2016_08_05/Bi_cuon.jpg')
 MenuItem.create(name: 'Bánh Mì', description: 'Bành mì thịt nguội', price: 14000, section: 'breakfast', image_url: 'http://baomoi-photo-1.zadn.vn/16/09/10/244/20293629/8_157119.jpg')
 
 # Lunch
@@ -30,8 +30,8 @@ MenuItem.create(name: 'Cơm Sườn Cây', description: 'Cơm với sườn cây
 MenuItem.create(name: 'Bún Chả Cá', description: 'Một món ăn bình dân', price: 20000, section: 'dinner', image_url: 'https://media.foody.vn/res/g1/5742/prof/s576x330/foody-mobile-foody-bun-cha-ca-ngu-335-635896777195091193.jpg')
 
 # Drinks
-MenuItem.create(name: 'Cocacola', description: 'Một loại nước ngon có ga', price: 10000, section: 'drinks', image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flasche_Coca-Cola_0%2C2_Liter.jpg/220px-Flasche_Coca-Cola_0%2C2_Liter.jpg')
-MenuItem.create(name: 'Pepsi', description: 'Một loại nước ngon có ga', price: 10000, section: 'drinks', image_url: 'https://secure.footprint.net/cupages/pepsi/Shashank/3_cans.png')
+MenuItem.create(name: 'Coca-Cola', description: 'Một loại nước ngọt có ga', price: 10000, section: 'drinks', image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flasche_Coca-Cola_0%2C2_Liter.jpg/220px-Flasche_Coca-Cola_0%2C2_Liter.jpg')
+MenuItem.create(name: 'Pepsi', description: 'Một loại nước ngọt có ga', price: 10000, section: 'drinks', image_url: 'https://secure.footprint.net/cupages/pepsi/Shashank/3_cans.png')
 MenuItem.create(name: 'Cà Phê', description: 'Cà phê Trung Nguyên', price: 8000, section: 'drinks', image_url: 'http://conlatatca.vn/wp-content/uploads/2016/03/uong-ca-phe-co-anh-huong-den-tinh-trung-hay-khong3.jpg')
 MenuItem.create(name: 'Trà Đá', description: 'Trà + đá', price: 1000, section: 'drinks', image_url: 'http://media.phunutoday.vn/files/van.anh/2016/10/12/suc-khoe-phunutodayvn-2323.jpg')
 MenuItem.create(name: 'Nước Khoáng', description: 'Nước khoáng đóng chai', price: 5000, section: 'drinks', image_url: 'http://bizweb.dktcdn.net/100/015/572/products/product-1403236338.jpg?v=1445583374450')

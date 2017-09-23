@@ -1,37 +1,22 @@
 <h1>Menu</h1>
-<h2>Breakfast</h2>
-<% @menu_items_breakfast.each do |item| %>
-<%= item.name %><br>
-<%= item.description %><br>
-<%= number_with_precision(item.price, precision: 0)  %> VND<br>
-<%= item.section %><br>
-<%= item.image_url %><br>
-<br>
-<% end %>
-<h2>Lunch</h2>
-<% @menu_items_lunch.each do |item| %>
-<%= item.name %><br>
-<%= item.description %><br>
-<%= number_with_precision(item.price, precision: 0)  %> VND<br>
-<%= item.section %><br>
-<%= item.image_url %><br>
-<br>
-<% end %>
-<h2>Dinner</h2>
-<% @menu_items_dinner.each do |item| %>
-<%= item.name %><br>
-<%= item.description %><br>
-<%= number_with_precision(item.price, precision: 0)  %> VND<br>
-<%= item.section %><br>
-<%= item.image_url %><br>
-<br>
-<% end %>
-<h2>Drinks</h2>
-<% @menu_items_drinks.each do |item| %>
-<%= item.name %><br>
-<%= item.description %><br>
-<%= number_with_precision(item.price, precision: 0)  %> VND<br>
-<%= item.section %><br>
-<%= item.image_url %><br>
-<br>
+<% ["breakfast", "lunch", "dinner", "drinks"].each do |section| %>
+  <h2><%= @section_names[section] %></h2>
+  <div class="row">
+    <% @menu_items[section].each do |item| %>
+      <div class="col-md-4">
+        <div class="menu-item-card" style="width: 20rem;">
+          <img class="card-img-top" src="<%= item.image_url %>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= item.name %></h5>
+            <div class="price"><%= number_with_precision(item.price, precision: 0)  %> VND</div>
+            <p class="card-text">
+              <%= item.description %>
+            </p>
+            <a href="#" class="btn btn-primary">Details</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <br/>
 <% end %>

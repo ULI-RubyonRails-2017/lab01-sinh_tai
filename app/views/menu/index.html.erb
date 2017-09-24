@@ -1,69 +1,85 @@
-<h1>Menu</h1>
-<%= form_tag menu_index_path, method: "get", id: "filter-form" do %>
-<div class="filter-options">
-  <div id="section-filter">
-    Filter:
-    <div>
-      <%= radio_button_tag(:section_filter, "all", @section_filter == "all") %>
-      <%= label_tag(:section_filter_all, "All") %>
-    </div>
-    <div>
-      <%= radio_button_tag(:section_filter, "breakfast", @section_filter == "breakfast") %>
-      <%= label_tag(:section_filter_breakfast, "Breakfast") %>
-    </div>
-    <div>
-      <%= radio_button_tag(:section_filter, "lunch", @section_filter == "lunch") %>
-      <%= label_tag(:section_filter_lunch, "Lunch") %>
-    </div>
-    <div>
-      <%= radio_button_tag(:section_filter, "dinner", @section_filter == "dinner") %>
-      <%= label_tag(:section_filter_dinner, "Dinner") %>
-    </div>
-    <div>
-      <%= radio_button_tag(:section_filter, "drinks", @section_filter == "drinks") %>
-      <%= label_tag(:section_filter_drinks, "Drinks") %>
-    </div>
-  </div>
-  <div id="sort-options">
-    Sort:
-    <div>
-      <%= radio_button_tag(:sort, "alpha", @sort == "alpha") %>
-      <%= label_tag(:sort_alpha, "Alphabetical") %>
-    </div>
-    <div>
-      <%= radio_button_tag(:sort, "h2l", @sort == "h2l") %>
-      <%= label_tag(:sort_h2l, "Price high to low") %>
-    </div>
-    <div>
-      <%= radio_button_tag(:sort, "l2h", @sort == "l2h") %>
-      <%= label_tag(:sort_l2h, "Price low to high") %>
-    </div>
-  </div>
-  <div>
-    <input class="btn btn-primary" type="submit" value="Apply">
-  </div>
-</div>
-<% end %>
-<% ["breakfast", "lunch", "dinner", "drinks"].each do |section| %>
-<% unless @menu_items[section] == nil %>
-<h2><%= @section_names[section] %></h2>
-<div class="row">
-  <% @menu_items[section].each do |item| %>
-  <div class="col-md-4">
-    <div class="menu-item-card" style="width: 20rem;">
-      <img class="card-img-top" src="<%= item.image_url %>" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title"><%= item.name %></h5>
-        <div class="price"><%= number_with_precision(item.price, precision: 0)  %> VND</div>
-        <p class="card-text">
-          <%= item.description %>
-        </p>
-        <a href="#" class="btn btn-primary">Details</a>
+<div class="container-fluid">
+  <div class="row">
+    <div id="sidebar" class="col-md-3"><h1>Menu</h1>
+      <%= form_tag("/orders/show_cart", method: "get", id: "form-view-order") do %>
+      <input type="hidden" value="" name="cart"/>
+      <%= submit_tag("Show my cart", class: "btn btn-primary btn-lg btn-block") %>
+      <% end %>
+      <br/>
+      <button id="btn-reset-order" type="button" class="btn btn-primary btn-lg btn-block">Reset Order</button>
+      <%= form_tag menu_index_path, method: "get", id: "filter-form" do %>
+      <div class="filter-options">
+        <div id="section-filter">
+          <strong>Filter</strong>
+          <div>
+            <%= radio_button_tag(:section_filter, "all", @section_filter == "all") %>
+            <%= label_tag(:section_filter_all, "All") %>
+          </div>
+          <div>
+            <%= radio_button_tag(:section_filter, "breakfast", @section_filter == "breakfast") %>
+            <%= label_tag(:section_filter_breakfast, "Breakfast") %>
+          </div>
+          <div>
+            <%= radio_button_tag(:section_filter, "lunch", @section_filter == "lunch") %>
+            <%= label_tag(:section_filter_lunch, "Lunch") %>
+          </div>
+          <div>
+            <%= radio_button_tag(:section_filter, "dinner", @section_filter == "dinner") %>
+            <%= label_tag(:section_filter_dinner, "Dinner") %>
+          </div>
+          <div>
+            <%= radio_button_tag(:section_filter, "drinks", @section_filter == "drinks") %>
+            <%= label_tag(:section_filter_drinks, "Drinks") %>
+          </div>
+        </div>
+        <div id="sort-options">
+          <strong>Sort</strong>
+          <div>
+            <%= radio_button_tag(:sort, "alpha", @sort == "alpha") %>
+            <%= label_tag(:sort_alpha, "Alphabetical") %>
+          </div>
+          <div>
+            <%= radio_button_tag(:sort, "h2l", @sort == "h2l") %>
+            <%= label_tag(:sort_h2l, "Price high to low") %>
+          </div>
+          <div>
+            <%= radio_button_tag(:sort, "l2h", @sort == "l2h") %>
+            <%= label_tag(:sort_l2h, "Price low to high") %>
+          </div>
+        </div>
+        <div>
+          <input class="btn btn-primary" type="submit" value="Apply">
+        </div>
+      </div>
+      <% end %></div>
+      <div class="col-md-9">
+
+        <% ["breakfast", "lunch", "dinner", "drinks"].each do |section| %>
+        <% unless @menu_items[section] == nil %>
+        <h2><%= @section_names[section] %></h2>
+        <div class="row">
+          <% @menu_items[section].each do |item| %>
+          <div class="col-md-4">
+            <div class="menu-item-card" style="width: 20rem;">
+              <img class="card-img-top" src="<%= item.image_url %>" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"><%= item.name %></h5>
+                <div class="price"><%= number_with_precision(item.price, precision: 0)  %> VND</div>
+                <p class="card-text">
+                  <%= item.description %>
+                </p>
+                <input type="number" name="quantity" min="0" max="100" step="1" value="0">
+                <%= link_to 'Details', item, class: "btn btn-primary", target: "_blank" %>
+                <button type="button" class="btn btn-primary btn-add-to-cart" value="<%= item.id %>">Add to cart</button>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+        <br/>
+        <% end %>
+        <% end %>
+
       </div>
     </div>
   </div>
-  <% end %>
-</div>
-<br/>
-<% end %>
-<% end %>

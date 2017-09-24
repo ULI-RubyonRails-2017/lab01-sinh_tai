@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   resources :menu , only: [:index]
   resources :contact_us , only: [:index]
 
+  resources :menu_items , only: [:show]
+  resources :orders , only: [:create]
+
+  get 'orders/show_cart'
+
 end

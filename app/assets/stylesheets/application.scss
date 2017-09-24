@@ -1,8 +1,10 @@
 @import "bootstrap";
 @import "menu";
+@import "menu_items";
 
 body {
-  background-color: #EEEEEE
+  background-color: #EEEEEE;
+  padding-top: 56px;
 }
 
 .bg-color-white {
@@ -11,4 +13,8 @@ body {
 
 .full-height {
   min-height: 100vh;
+}
+
+.no-padding {
+  padding: 0;
 }

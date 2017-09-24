@@ -1,0 +1,19 @@
+<h1>Thank you for your order</h1>
+<% @cart_items.each do |k, v| %>
+******************** <br/>
+---- ID: <%= @cart_items[k]["id"] %> <br/>
+---- Name: <%= @cart_items[k]["name"] %> <br/>
+---- Price: <%= number_with_precision(@cart_items[k]["price"], precision: 0) %> VND<br/>
+---- Quantity: <%= @cart_items[k]["quantity"] %> <br/>
+---- Total: <%= number_with_precision(@cart_items[k]["total"], precision: 0) %> VND<br/>
+<br/>
+<% end %>
+**************************************** <br/>
+---- Delivery cost: <%= number_with_precision(@delivery_cost, precision: 0) %> VND<br/>
+---- Total cost: <%= number_with_precision(@total_cost, precision: 0) %> VND<br/>
+<br/>
+**************************************** <br/>
+---- User name: <%= @user_name %> <br/>
+---- Address: <%= @address %> <br/>
+---- Created at: <%= @created_at %> <br/>
+<br/>

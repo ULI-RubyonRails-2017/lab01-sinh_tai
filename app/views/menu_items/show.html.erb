@@ -1,0 +1,7 @@
+<h1 class="menu-item-name"><%= @menu_item.name %></h1>
+<p>Price: <%= number_with_precision(@menu_item.price, precision: 0)  %> VND</p>
+<p>Description: <%= @menu_item.description %></p>
+<p>Section: <%= @menu_item.section %></p>
+<img src="<%= @menu_item.image_url %>" alt="<%= @menu_item.name %>">
+<br/>
+<br/>

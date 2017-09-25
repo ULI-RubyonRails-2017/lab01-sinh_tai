@@ -1,0 +1,2 @@
+class SomethingWrongController < ApplicationController
+end

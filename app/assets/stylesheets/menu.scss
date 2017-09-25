@@ -1,0 +1,36 @@
+// Place all the styles related to the Menu controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.menu-item-card {
+  @extend .card;
+  margin: 10px;
+
+  .card-body {
+    .price {
+      color: DarkGray;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.filter-options {
+  background-color: LightYellow;
+  padding: 10px;
+  margin: 20px 0;
+  border: 1px dotted black;
+}
+
+#sidebar {
+  // background-color: red;
+  border-right: 2px solid LightGray;
+}
+
+#section-filter, #sort-options {
+  margin: 12px 0;
+
+  div {
+    // display: inline-block;
+    margin: 0 0 0 30px;
+  }
+}

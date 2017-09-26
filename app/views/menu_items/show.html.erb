@@ -1,7 +1,45 @@
-<h1 class="menu-item-name"><%= @menu_item.name %></h1>
-<p>Price: <%= number_with_precision(@menu_item.price, precision: 0)  %> VND</p>
-<p>Description: <%= @menu_item.description %></p>
-<p>Section: <%= @menu_item.section %></p>
-<img src="<%= @menu_item.image_url %>" alt="<%= @menu_item.name %>">
-<br/>
-<br/>
+<div class="container">
+  <h1 class="menu-item-name"><%= @menu_item.name %></h1>
+  <p>Price: <%= number_with_precision(@menu_item.price, precision: 0)  %> VND</p>
+  <p>Description: <%= @menu_item.description %></p>
+  <p>Section: <%= @menu_item.section %></p>
+  <img src="<%= @menu_item.image_url %>" alt="<%= @menu_item.name %>">
+  <br/>
+  <br/>
+
+  <h2>Reviews</h2>
+  <div class="avg-box">
+    <strong>Average score: </strong><%= number_with_precision(@avg, precision: 2) %>
+  </div>
+  <% @menu_item.reviews.each do |rv| %>
+  <div class="review-box card w-75">
+    <div class="card-body">
+      <p class="card-text">
+        Score: <%= rv.score %><br/>
+        Text: <%= rv.review_text %></p>
+    </div>
+  </div>
+  <% end %>
+
+  <br/>
+  <br/>
+
+  <h2>Add a review:</h2>
+  <%= form_with(model: [ @menu_item, @menu_item.reviews.build ], local: true, id: "add-review-form") do |form| %>
+  <p>
+    <%= form.label :score %><br>
+    <%= form.number_field :score, in: 1..5, step: 1, value: 5 %>
+  </p>
+  <p>
+    <%= form.label :review_text %><br>
+    <%= form.text_area :review_text, size: "70x8" %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+  <% end %>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+</div>

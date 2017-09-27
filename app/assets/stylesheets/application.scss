@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "menu";
 @import "menu_items";
+@import "font-awesome";
 
 body {
   background-color: #EEEEEE;
@@ -25,4 +26,10 @@ body {
 
 .bg-color-red {
   background-color: #FF0000
+}
+
+#nav-item-list {
+  .nav-item {
+    margin: 0 10px;
+  }
 }

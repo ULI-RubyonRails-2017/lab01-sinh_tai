@@ -61,7 +61,9 @@
           <% @menu_items[section].each do |item| %>
           <div class="col-md-4">
             <div class="menu-item-card" style="width: 20rem;">
-              <img class="card-img-top" src="<%= item.image_url %>" alt="Card image cap">
+              <div class="card-img-top">
+                <img src="<%= item.image_url %>" alt="Card image cap">
+              </div>
               <div class="card-body">
                 <h5 class="card-title"><%= item.name %></h5>
                 <div class="price"><%= number_with_precision(item.price, precision: 0)  %> VND</div>

@@ -1,3 +1,4 @@
+<% content_for(:page_title, "Your Cart") %>
 <%= form_tag("/orders", method: "post") do %>
 <input type="hidden" value="<%= @delivery_cost %>" name="delivery_cost"/>
 <input type="hidden" value="<%= @total_cost %>" name="total_cost"/>

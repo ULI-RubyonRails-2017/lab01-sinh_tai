@@ -2,6 +2,18 @@
   padding: 30px 0;
 }
 
+.preview_image {
+  width: 30em;
+  height : 20em;
+
+  img {
+    display: block;
+    // margin:auto;
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
 .avg-box {
   margin-top: 20px;
   margin-bottom: 20px;

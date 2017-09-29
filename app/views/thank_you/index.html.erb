@@ -1,4 +1,11 @@
 <h1>Thank you for your order</h1>
+**************************************** <br/>
+---- User name: <%= @order.user_name %> <br/>
+---- Address: <%= @order.address %> <br/>
+---- Phone: <%= @order.phone %> <br/>
+---- Created at: <%= @order.created_at.strftime("%A, %B %d %T") %> <br/>
+<br/>
+<% @cart_items = JSON.parse(@order.cart_items) %>
 <% @cart_items.each do |k, v| %>
 ******************** <br/>
 ---- ID: <%= @cart_items[k]["id"] %> <br/>
@@ -9,12 +16,6 @@
 <br/>
 <% end %>
 **************************************** <br/>
----- Delivery cost: <%= number_with_precision(@delivery_cost, precision: 0) %> VND<br/>
----- Total cost: <%= number_with_precision(@total_cost, precision: 0) %> VND<br/>
-<br/>
-**************************************** <br/>
----- User name: <%= @user_name %> <br/>
----- Address: <%= @address %> <br/>
----- Phone: <%= @phone %> <br/>
----- Created at: <%= @created_at %> <br/>
+---- Delivery cost: <%= number_with_precision(@order.delivery_cost, precision: 0) %> VND<br/>
+---- Total cost: <%= number_with_precision(@order.total_cost, precision: 0) %> VND<br/>
 <br/>

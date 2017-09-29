@@ -37,14 +37,7 @@ class OrdersController < ApplicationController
     anOrder.delivery_cost = params[:delivery_cost]
     anOrder.total_cost = params[:total_cost]
     if anOrder.save
-      @cart_items = JSON.parse(anOrder.cart_items)
-      @delivery_cost = anOrder.delivery_cost
-      @total_cost = anOrder.total_cost
-      @user_name = anOrder.user_name
-      @address = anOrder.address
-      @phone = anOrder.phone
-      @created_at = anOrder.created_at.strftime("%A, %B %d %T")
-      render "thank_you/index"
+      redirect_to controller: 'thank_you', action: 'index', order_id: anOrder.id
     else
       render "something_wrong/index"
     end

@@ -3,16 +3,17 @@ cart = new Object()
 
 function setup()
 {
-  $('#form-view-order').submit(function() {
-    $(this).find("[name='cart']").each( function () {
-      this.value = JSON.stringify(cart);
-    });
-    return true; // return false to cancel form action
-  });
+  // $('#form-view-order').submit(function() {
+  //   $(this).find("[name='cart']").each( function () {
+  //     this.value = JSON.stringify(cart);
+  //   });
+  //   return true; // return false to cancel form action
+  // });
 
-  $("#btn-reset-order").click(function() {
-    cart = new Object()
+  $("#btn-empty-cart").click(function() {
+    cart = new Object();
     console.log(cart);
+    setCookie("cart", JSON.stringify(cart), 1);
   });
 
   $(".btn-add-to-cart").click(function() {
@@ -23,7 +24,9 @@ function setup()
       } else {
         cart[item_id] = parseInt(this.value);
       }
+
       console.log(cart);
+      setCookie("cart", JSON.stringify(cart), 1);
     });
   });
 }

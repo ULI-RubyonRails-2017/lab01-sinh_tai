@@ -1,33 +1,31 @@
 class OrdersController < ApplicationController
   def show_cart
+    @cart_items = Hash.new
+
+    @delivery_cost = 20000
+    @total_cost = @delivery_cost
+
     begin
-      @cart = JSON.parse(params[:cart])
+      @cart = JSON.parse(URI.unescape(cookies[:cart]))
+      if @cart != nil
+        @cart.each do |k, v|
+          item = MenuItem.find(k)
+          if item != nil
+            @cart_items[k] = Hash.new
+            @cart_items[k]["id"] = k
+            @cart_items[k]["name"] = item.name
+            @cart_items[k]["price"] = item.price
+            @cart_items[k]["quantity"] = v
+            @cart_items[k]["total"] = v * item.price
+            @total_cost += @cart_items[k]["total"]
+          end
+        end
+      end
     rescue
 
     end
 
-    @cart_items = Hash.new
-
-    @delivery_cost = 20000
-    @total_cost = 0
-
-    if @cart != nil
-      @cart.each do |k, v|
-        item = MenuItem.find(k)
-        if item != nil
-          @cart_items[k] = Hash.new
-          @cart_items[k]["id"] = k
-          @cart_items[k]["name"] = item.name
-          @cart_items[k]["price"] = item.price
-          @cart_items[k]["quantity"] = v
-          @cart_items[k]["total"] = v * item.price
-          @total_cost += @cart_items[k]["total"]
-        end
-      end
-    end
-
     @cart_items_json = JSON.generate(@cart_items)
-    @total_cost += @delivery_cost
   end
 
   def create

@@ -14,19 +14,25 @@ function setup()
     cart = new Object();
     console.log(cart);
     setCookie("cart", JSON.stringify(cart), 1);
+    alert("The cart is empty now.");
   });
 
   $(".btn-add-to-cart").click(function() {
     var item_id = this.value;
-    $(this).parent().find("[name='quantity']").each( function () {
-      if (typeof cart[item_id] != "undefined") {
-        cart[item_id] += parseInt(this.value);
-      } else {
-        cart[item_id] = parseInt(this.value);
-      }
 
+    if (typeof cart[item_id] == "undefined")
+      cart[item_id] = 0;
+
+    $(this).parent().find("[name='quantity']").each( function () {
+      var num = parseInt(this.value);
+      cart[item_id] += num;
       console.log(cart);
       setCookie("cart", JSON.stringify(cart), 1);
+      if (num > 1) {
+        alert("Added " + num.toString() + " items to the cart");
+      } else {
+        alert("Added " + num.toString() + " item to the cart");
+      }
     });
   });
 }

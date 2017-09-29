@@ -25,14 +25,15 @@ class OrdersController < ApplicationController
 
     end
 
-    @cart_items_json = JSON.generate(@cart_items)
+    cookies[:cart_items_json] = URI.escape(JSON.generate(@cart_items))
   end
 
   def create
     anOrder = Order.new
     anOrder.user_name = params[:user_name]
     anOrder.address = params[:address]
-    anOrder.cart_items = params[:cart_items]
+    anOrder.phone = params[:phone]
+    anOrder.cart_items = URI.unescape(cookies[:cart_items_json])
     anOrder.delivery_cost = params[:delivery_cost]
     anOrder.total_cost = params[:total_cost]
     if anOrder.save
@@ -41,6 +42,7 @@ class OrdersController < ApplicationController
       @total_cost = anOrder.total_cost
       @user_name = anOrder.user_name
       @address = anOrder.address
+      @phone = anOrder.phone
       @created_at = anOrder.created_at.strftime("%A, %B %d %T")
       render "thank_you/index"
     else

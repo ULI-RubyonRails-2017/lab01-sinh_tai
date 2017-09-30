@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :orders , only: [:create]
 
+  get 'thank_you/index'
   get 'orders/show_cart'
 
 end

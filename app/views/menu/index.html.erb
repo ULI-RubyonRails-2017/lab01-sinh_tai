@@ -1,12 +1,12 @@
+<% content_for(:page_title, "Menu") %>
 <div class="container-fluid">
   <div class="row">
     <div id="sidebar" class="col-md-3"><h1>Menu</h1>
       <%= form_tag("/orders/show_cart", method: "get", id: "form-view-order") do %>
-      <input type="hidden" value="" name="cart"/>
-      <%= submit_tag("Show my cart", class: "btn btn-primary btn-lg btn-block") %>
+      <%= submit_tag("Show Cart", class: "btn btn-primary btn-lg btn-block") %>
       <% end %>
       <br/>
-      <button id="btn-reset-order" type="button" class="btn btn-primary btn-lg btn-block">Reset Order</button>
+      <button id="btn-empty-cart" type="button" class="btn btn-primary btn-lg btn-block">Empty Cart</button>
       <%= form_tag menu_index_path, method: "get", id: "filter-form" do %>
       <div class="filter-options">
         <div id="section-filter">
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div>
-          <input class="btn btn-primary" type="submit" value="Apply">
+          <input class="btn btn-primary btn-lg btn-block" type="submit" value="Apply">
         </div>
       </div>
       <% end %></div>
@@ -70,7 +70,7 @@
                 <p class="card-text">
                   <%= item.description %>
                 </p>
-                <input type="number" name="quantity" min="0" max="100" step="1" value="0">
+                <input type="number" name="quantity" min="1" max="100" step="1" value="1">
                 <%= link_to 'Details', item, class: "btn btn-primary", target: "_blank" %>
                 <button type="button" class="btn btn-primary btn-add-to-cart" value="<%= item.id %>">Add to cart</button>
               </div>

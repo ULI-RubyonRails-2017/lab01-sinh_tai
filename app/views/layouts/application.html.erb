@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Webapp</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title><%= content_for(:page_title) || "CoderRestaurant" %></title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
-      <a href="/" class="navbar-brand"><%= fa_icon "home" %> CoderRestaurant</a>
-      <ul id="nav-item-list" class="navbar-nav">
-        <li class="nav-item"><a href="/menu" class="nav-link"><%= fa_icon "list-alt" %> Menu</a></li>
-        <li class="nav-item"><a href="/contact_us" class="nav-link"><%= fa_icon "address-book-o" %> Contact Us</a></li>
-      </ul>
-    </nav>
-    <div class="container-fluid bg-color-white full-height no-padding">
-      <%= yield %>
-    </div>
-  </body>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
+    <a href="/" class="navbar-brand"><%= fa_icon "home" %> CoderRestaurant</a>
+    <ul id="nav-item-list" class="navbar-nav">
+      <li class="nav-item"><a href="/menu" class="nav-link"><%= fa_icon "list-alt" %> Menu</a></li>
+      <li class="nav-item"><a href="/contact_us" class="nav-link"><%= fa_icon "address-book-o" %> Contact Us</a></li>
+    </ul>
+  </nav>
+  <div class="container-fluid bg-color-white full-height no-padding">
+    <%= yield %>
+  </div>
+</body>
 </html>

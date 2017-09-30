@@ -1,11 +1,13 @@
+<% content_for(:page_title, "Your Cart") %>
 <%= form_tag("/orders", method: "post") do %>
-<input type="hidden" value="<%= @cart_items_json %>" name="cart_items"/>
 <input type="hidden" value="<%= @delivery_cost %>" name="delivery_cost"/>
 <input type="hidden" value="<%= @total_cost %>" name="total_cost"/>
 <%= label_tag(:user_name, "User name:") %>
 <%= text_field_tag(:user_name) %><br/>
 <%= label_tag(:address, "Address:") %>
 <%= text_field_tag(:address) %><br/>
+<%= label_tag(:phone, "Phone:") %>
+<%= text_field_tag(:phone) %><br/>
 <%= submit_tag("Confirm this order", class: "btn btn-primary btn-lg") %>
 <% end %>
 <br/>

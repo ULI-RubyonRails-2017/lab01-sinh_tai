@@ -2,10 +2,12 @@ class MenuController < ApplicationController
   def index
     @section_names = {"breakfast" => "Breakfast", "lunch" => "Lunch", "dinner" => "Dinner", "drinks" => "Drinks"}
 
-    @section_filter = params[:section_filter];
+    @section_filter = params[:section_filter] || cookies[:section_filter];
     @section_filter = "all" if @section_filter == nil;
+    cookies[:section_filter] = @section_filter;
 
-    @sort = params[:sort];
+    @sort = params[:sort] || cookies[:sort];
+    cookies[:sort] = @sort;
 
     @menu_items = Hash.new
 

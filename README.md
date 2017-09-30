@@ -2,11 +2,11 @@
 
 **Coder Restaurant** is a Ruby on Rails restaurant website let users order foods.
 
-Submitted by: **Your name**
+Submitted by: **Tai + Sinh**
 
-Time spent: **time** hours spent in total
+Time spent: **More than 20** hours spent in total
 
-URL: 
+URL: https://github.com/ULI-RubyonRails-2017/lab01-sinh_tai
 
 ## User Stories
 
@@ -56,9 +56,7 @@ The following **known issues**:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](demo.gif)
-
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+![Video Walkthrough]https://www.youtube.com/watch?v=iRF7eBJpqdc&feature=youtu.be
 
 ## Notes
 

@@ -9,7 +9,7 @@
 MenuItem.delete_all
 
 # Breakfast
-MenuItem.create(name: 'Cơm Sườn', description: 'Cơm tấm ăn với một miếng sườn lớn.', price: 23000, section: 'breakfast', image_url: 'http://foodsvietnamese.com/wp-content/uploads/2016/10/com-suon-nuong.jpg')
+MenuItem.create(name: 'Cơm Sườn', description: 'Cơm tấm ăn với một miếng sườn lớn.', price: 23000, section: 'breakfast', image_url: 'http://vivuhanoi.com/wp-content/uploads/2016/01/com-suon-4.jpg')
 MenuItem.create(name: 'Bánh Ướt', description: 'Bánh ướt là món ăn Việt Nam được ăn với nước mắm', price: 17000, section: 'breakfast', image_url: 'http://lambanh365.com/wp-content/uploads/2015/06/cach-lam-banh-uot-ngon-me-ly-1-e1434598404566.jpg')
 MenuItem.create(name: 'Bánh Cuốn', description: 'Bánh ướt là món ăn Việt Nam được ăn với nước mắm', price: 18000, section: 'breakfast', image_url: 'https://vietnamtravel.guide/wp-content/uploads/2016/03/cach-lam-banh-cuon.jpg')
 MenuItem.create(name: 'Bì Cuốn', description: 'Bì cuốn là một món khai vị. Mỗi cuốn 5000 VND. Mua một lần ba cuốn.', price: 15000, section: 'breakfast', image_url: 'http://znews-photo-td.zadn.vn/w660/Uploaded/Ohunoaa/2016_08_05/Bi_cuon.jpg')
